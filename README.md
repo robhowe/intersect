@@ -51,8 +51,7 @@ Note - This is a programming exercise, not an enterprise-level production-ready 
 ## Installation:
 
 This is a simple library project utilizing composer.
-To get started, consider running the following commands
-from the library's base dir:
+To get started, run the following commands from the library's base dir:
 ~~~~
 composer update
 phpunit
