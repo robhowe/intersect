@@ -1,0 +1,27 @@
+{
+    "name": "intersect/intersect",
+    "description": "Coding assessment project involving geometric elements.",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Rob Howe",
+            "email": "rob@robhowe.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Intersect\\": "app/Intersect"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+    }
+}
