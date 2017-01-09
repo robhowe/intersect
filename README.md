@@ -5,12 +5,10 @@ A library project created by Rob Howe <rob@robhowe.com> in response to a Coding 
 ## Requirements:
 
 Given three geometric elements: circle, lines, and points. Detect the intersection of 
-~~~~
-    A point inside a circle
-    A circle intersecting with another circle
-    A line intersecting with another line
-    A line intersecting a point 
-~~~~
+ * A point inside a circle
+ * A circle intersecting with another circle
+ * A line intersecting with another line
+ * A line intersecting a point 
 
 A point is defined by an x,y coordinate.  i.e.: [0,0] would be at the origin.
 ~~~~
@@ -39,7 +37,7 @@ end
 ~~~~
 You may also find it more natural to define a.intersect(b).
 
-The only hard requirement is that the intersect method(s) return the correct truth values.
+The only hard requirement is that the `intersect` method(s) return the correct truth values.
 
 Along with solutions - the code follows PSR defined by PHP-FIG and includes PHPUnit tests.
 
@@ -56,9 +54,7 @@ This is a simple library project utilizing composer.
 To get started, consider running the following commands
 from the library's base dir:
 ~~~~
-composer validate
 composer update
-composer dump-autoload -o
 phpunit
 ~~~~
 

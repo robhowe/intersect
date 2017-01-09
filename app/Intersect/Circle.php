@@ -22,14 +22,16 @@ namespace Intersect;
 class Circle extends GeometricElement
 {
     // Just as an example of being overly-protected:
-    // One Point and a Radius defines a circle
-    protected $_point;
+    protected $_point;  // One Point and a radius defines a circle
     protected $_radius;  // any valid number
 
 
-    //////////////////////////////
-
-
+    /**
+     * A circle can be instantiated by providing a center Point and a radius.
+     *
+     * @param Point $p    The center Point.
+     * @param number $radius    The radius of this circle.
+     */
     public function __construct($p, $radius)
     {
         $this->point = $p;
@@ -37,6 +39,10 @@ class Circle extends GeometricElement
     }
 
 
+    /**
+     * @param Point $value    The center Point of this circle.
+     * @return $this
+     */
     public function setPoint($value)
     {
         if (!($value instanceof Point)) {
@@ -46,12 +52,19 @@ class Circle extends GeometricElement
         return $this;
     }
 
+    /**
+     * @return Point    The center Point of this circle.
+     */
     public function getPoint()
     {
         return $this->_point;
     }
 
 
+    /**
+     * @param number $value    The radius of this circle.
+     * @return $this
+     */
     public function setRadius($value)
     {
         if (!is_numeric($value)) {
@@ -64,36 +77,44 @@ class Circle extends GeometricElement
         return $this;
     }
 
+    /**
+     * @return number    The radius of this circle.
+     */
     public function getRadius()
     {
         return $this->_radius;
     }
 
 
+    /**
+     * @see GeometricElement::intersect()    To see how this method is invoked.
+     * @param Point $point    A Point to compare.
+     * @return bool    True if the given Point intersects this Circle.
+     */
     public function intersectPoint($point)
     {
-
-        // @TODO - need to fully implement this
-
-        if ($this->point->intersect($point)) {
-            return true;
-        }
-        return false;
+        // No need to reimplement this logic again:
+        return $point->intersect($this);
     }
 
 
+    /**
+     * @see GeometricElement::intersect()    To see how this method is invoked.
+     * @param Line $line    A Line to compare.
+     * @return bool    True if the given Line intersects this Circle.
+     */
     public function intersectLine($line)
     {
-
-        // @TODO - need to fully implement this
-
-        if ($this->point->intersect($line)) {
-            return true;
-        }
-        return false;
+        // No need to reimplement this logic again:
+        return $line->intersect($this);
     }
 
 
+    /**
+     * @see GeometricElement::intersect()    To see how this method is invoked.
+     * @param Circle $circle    Another Circle to compare.
+     * @return bool    True if the given Circle intersects this one.
+     */
     public function intersectCircle($circle)
     {
 

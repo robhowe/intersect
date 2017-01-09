@@ -22,13 +22,18 @@ namespace Intersect;
 class Point extends GeometricElement
 {
     // Just as an example of being overly-protected:
-    protected $_x;
+    protected $_x;  // an x & y coordinate defines a point
     protected $_y;
 
 
-    //////////////////////////////
-
-
+    /**
+     * A point can be instantiated from either:
+     *   an assoc array of x & y coordinates,
+     *   or separate x & y args.
+     *
+     * @param $x    An Assoc array, or 'x' coord.
+     * @param $y    (optional) A 'y' coord.
+     */
     public function __construct($x, $y = NULL)
     {
         if (is_array($x)) {
@@ -44,39 +49,64 @@ class Point extends GeometricElement
     }
 
 
+    /**
+     * @param int $value    The 'x' coordinate value of this point.
+     * @return $this
+     */
     public function setX($value)
     {
         $this->_x = (int)$value;
         return $this;
     }
 
+    /**
+     * @return int    The 'x' coordinate value of this point.
+     */
     public function getX()
     {
         return $this->_x;
     }
 
 
+    /**
+     * @param int $value    The 'y' coordinate value of this point.
+     * @return $this
+     */
     public function setY($value)
     {
         $this->_y = (int)$value;
         return $this;
     }
 
+    /**
+     * @return int    The 'y' coordinate value of this point.
+     */
     public function getY()
     {
         return $this->_y;
     }
 
 
+    /**
+     * @see GeometricElement::intersect()    To see how this method is invoked.
+     * @param Point $point    Another Point to compare.
+     * @return bool    True if the given Point intersects this one.
+     */
     public function intersectPoint($point)
     {
-        if (($this->x == $point->x) && ($this->y == $point->y)) {
+        if (($this->x == $point->x) &&
+            ($this->y == $point->y)) {
             return true;
         }
         return false;
     }
 
 
+    /**
+     * @see GeometricElement::intersect()    To see how this method is invoked.
+     * @param Line $line    A Line to compare.
+     * @return bool    True if the given Line intersects this Point.
+     */
     public function intersectLine($line)
     {
 
@@ -91,6 +121,11 @@ class Point extends GeometricElement
     }
 
 
+    /**
+     * @see GeometricElement::intersect()    To see how this method is invoked.
+     * @param Circle $circle    A Circle to compare.
+     * @return bool    True if the given Circle intersects this Point.
+     */
     public function intersectCircle($circle)
     {
 

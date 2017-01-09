@@ -22,6 +22,9 @@ namespace Intersect;
 
 class GeometricElement
 {
+    /**
+     * Convenient "wrapper" method used to safely update protected or private properties.
+     */
     public function __set($name, $value)
     {
         $method = "set$name";
@@ -33,6 +36,9 @@ class GeometricElement
         $this->$method($value);
     }
 
+    /**
+     * Convenient "wrapper" method used to safely access protected or private properties.
+     */
     public function __get($name)
     {
         $method = "get$name";
@@ -49,6 +55,9 @@ class GeometricElement
      * This "wrapper" method shouldn't need to be overridden by any sub-classes,
      * instead, sub-classes will implement functions such as:
      *   intersectPoint(), intersectLine(), intersectCircle(), etc.
+     *
+     * @param obj $element    Any type of geometric element.
+     * @return bool    True if the given geometric element intersects this one.
      */
     final public function intersect($element = NULL)
     {
