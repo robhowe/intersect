@@ -4,11 +4,12 @@ A library project created by Rob Howe <rob@robhowe.com> in response to a Coding 
 
 ## Requirements:
 
-Given three geometric elements: circle, lines, and points. Detect the intersection of
+Given three geometric elements: circle, lines, and points. Detect the intersection of 
+
 * A point inside a circle
 * A circle intersecting with another circle
 * A line intersecting with another line
-* A line intersecting a point
+* A line intersecting a point 
 
 A point is defined by an x,y coordinate.  i.e.: [0,0] would be at the origin.
 ~~~~
